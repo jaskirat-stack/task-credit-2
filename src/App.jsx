@@ -8,6 +8,7 @@ import Gallery from "./component/gallery";
 import Contact from "./component/contact";
 import Subscribe from "./component/subscribe";
 import Footer from "./component/footer";
+import FeaturedTutorials from "./component/tutorials";
 
 import Login from "./pages/login";
 import Signup from "./pages/signup";
@@ -21,6 +22,7 @@ function Home() {
       <Banner />
       <About />
       <Article />
+      <FeaturedTutorials/>
       <Gallery />
       <Contact />
       <Subscribe />

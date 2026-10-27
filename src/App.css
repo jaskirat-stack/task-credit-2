@@ -657,3 +657,46 @@ body {
     max-width: 300px;
   }
 }
+#tutorials .article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+}
+#tutorials .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#tutorials .article-card {
+    flex: 1 1 250px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+}
+.navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px 5%;
+    width: 100%;
+}
+.nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    min-width: 0;
+}
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 12px;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+}
