@@ -1,52 +1,75 @@
-import React, {useState} from "react";
+
+import React, { useState } from "react";
+
 function Subscribe() {
-  const [email,setemail] = useState("");
-  const [message,setmessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleSubscribe(e) {
     e.preventDefault();
-    setmessage(" sending ");
+
+    setMessage("");
+    setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3000/subscribe",{
-        method : "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email })
+      const response = await fetch(
+        "/.netlify/functions/subscribe",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || "Subscription failed."
+        );
       }
-    );
-    const data = await response.json();
-    if(!response.ok){
-      throw new Error(data.message);
-    }
-    setmessage(data.message);
-    setemail("");
+
+      setMessage(data.message || "Subscribed successfully!");
+      setEmail("");
     } catch (error) {
-      setmessage(error.message || "something went wrong");
+      console.error("Subscription error:", error);
+
+      setMessage(
+        error.message ||
+        "Unable to subscribe. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
-
-  
   }
-  return(
-    <section className="subscribe-section">
 
-    <form onSubmit={handleSubscribe}>
-      <h2>SIGN UP FOR OUR DAILY INSIDER</h2>
-      <input type="email"
-      placeholder ="Enter your email"
-      value={email}
-      onChange={(e) => setemail(e.target.value)}
-      required />
-      <button type="submit">Subscribe</button>
-      <p>{message}</p>
+  return (
+    <div className="subscribe">
+      <h2>Subscribe to Our Newsletter</h2>
 
-    </form>
-    </section>
+      <p>Enter your email to receive our latest updates.</p>
 
+      <form onSubmit={handleSubscribe}>
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          disabled={loading}
+        />
 
+        <button type="submit" disabled={loading}>
+          {loading ? "Subscribing..." : "Subscribe"}
+        </button>
+      </form>
+
+      {message && <p role="status">{message}</p>}
+    </div>
   );
-
-
 }
+
 export default Subscribe;

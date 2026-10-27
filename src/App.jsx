@@ -25,7 +25,7 @@ function Home() {
       <FeaturedTutorials/>
       <Gallery />
       <Contact />
-      <Subscribe />
+      <Subscribe/>
     </>
   );
 }

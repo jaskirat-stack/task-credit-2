@@ -122,49 +122,6 @@ h2 {
   padding: 10px;
   margin-left: 5px;
 }
-.footer {
-  width: 100%;
-  margin-top: 40px;
-}
-.footer-top {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: #333;
-  color: white;
-  padding: 40px 20px;
-}
-.footer-section {
-  width: 30%;
-  text-align: center;
-}
-.footer-section h3 {
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-.footer-section p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-.footer-section a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
-}
-.footer-section a:hover {
-  text-decoration: underline;
-}
-.footer-bottom {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-.footer-bottom p {
-  margin: 0;
-  font-size: 14px;
-}
 .auth-page {
   min-height: 70vh;
   display: flex;
@@ -699,4 +656,55 @@ body {
         justify-content: center;
         gap: 8px;
     }
+}
+.footer {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-section {
+  width: 30%;
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.footer-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
 }
