@@ -47,9 +47,11 @@ function Signup() {
                 email: email
             });
 
+           await auth.signOut();
+
             alert("Account created successfully.");
 
-            navigate("/login");
+            navigate("/login", { replace: true });
 
         } catch (error) {
 

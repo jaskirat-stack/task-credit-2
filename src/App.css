@@ -105,11 +105,40 @@ h2 {
   object-fit: cover;
   border-radius: 5px;
 }
-.contact {
-  text-align: center;
-  color: blue;
-  padding-bottom: 5%;
+
+#contact {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
 }
+
+#contact h1 {
+    color: #333333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact {
+    color: #444444;
+    font-size: 16px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    #contact h1 {
+        font-size: 24px;
+    }
+
+    .contact {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
 #signup {
   text-align: center;
   padding: 40px 20px;
@@ -519,19 +548,23 @@ body {
   border-radius: 5px;
   font-size: 15px;
 }
-
 .login-container button {
-  padding: 12px;
-  background: #1b1c1d;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .login-container button:hover {
-  background: #424344;
+    background: #4b5563;
 }
+
 
 .success-message {
   color: green;
@@ -657,54 +690,151 @@ body {
         gap: 8px;
     }
 }
+
+/* Main Footer */
 .footer {
-  width: 100%;
-  margin-top: 40px;
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 40px 8% 20px;
+    font-family: Arial, sans-serif;
 }
 
+/* Footer Top Section */
 .footer-top {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: #333;
-  color: white;
-  padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
+/* Individual Footer Sections */
 .footer-section {
-  width: 30%;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 150px;
 }
 
+/* Footer Headings */
 .footer-section h3 {
-  font-size: 25px;
-  margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
 }
 
-.footer-section p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
+/* Footer Links */
 .footer-section a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
+/* Footer Link Hover */
 .footer-section a:hover {
-  text-decoration: underline;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
+/* Social Media Icons */
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 8px;
+}
+
+/* Social Media Links */
+.footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Social Media Hover */
+.footer-socials a:hover {
+    color: #d1d5db;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
 .footer-bottom {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
+    border-top: 1px solid #4b5563;
+    padding-top: 18px;
+    text-align: center;
 }
 
+/* Copyright Text */
 .footer-bottom p {
-  margin: 0;
-  font-size: 14px;
+    color: #d1d5db;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Remove Default Blue Link Colours */
+.footer a,
+.footer a:visited,
+.footer a:active {
+    color: #e5e7eb;
+}
+
+/* Keep Links Light on Hover */
+.footer a:hover {
+    color: #ffffff;
+}
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+    .footer {
+        padding: 35px 6% 20px;
+    }
+
+    .footer-top {
+        justify-content: flex-start;
+        gap: 35px;
+    }
+
+    .footer-section {
+        min-width: 130px;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 20px 18px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .footer-section h3 {
+        font-size: 17px;
+    }
+
+    .footer-section a {
+        font-size: 14px;
+    }
+
+    .footer-socials a {
+        font-size: 23px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
 }
