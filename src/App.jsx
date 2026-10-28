@@ -6,7 +6,6 @@ import About from "./component/about";
 import Article from "./component/articlesection";
 import Gallery from "./component/gallery";
 import Contact from "./component/contact";
-import Subscribe from "./component/subscribe";
 import Footer from "./component/footer";
 import FeaturedTutorials from "./component/tutorials";
 import Post from "./pages/post";
