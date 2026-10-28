@@ -9,8 +9,8 @@ function Footer() {
 
                 <div className="footer-section">
                     <h3>Explore</h3>
-                    <a href="#home">Home</a>
-                    <a href="#articles">Articles</a>
+                    <a href="#about">About</a>
+                    <a href="#work">Articles</a>
                     <a href="#tutorials">Tutorials</a>
                 </div>
 
