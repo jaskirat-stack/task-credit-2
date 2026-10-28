@@ -9,7 +9,7 @@ import Contact from "./component/contact";
 import Subscribe from "./component/subscribe";
 import Footer from "./component/footer";
 import FeaturedTutorials from "./component/tutorials";
-
+import Post from "./pages/post";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 
@@ -25,7 +25,6 @@ function Home() {
       <FeaturedTutorials/>
       <Gallery />
       <Contact />
-      <Subscribe/>
     </>
   );
 }
@@ -44,6 +43,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/signup" element={<Signup />} />
+         <Route path="/post" element={<Post />} />
 
       </Routes>
 
