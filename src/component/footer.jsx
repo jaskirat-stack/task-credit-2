@@ -1,4 +1,3 @@
-
 import { FaInstagram, FaThreads } from "react-icons/fa6";
 
 function Footer() {

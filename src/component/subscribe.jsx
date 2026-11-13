@@ -1,52 +1,52 @@
-
-import React, { useState } from "react";
-
+import React, {useState} from "react";
 function Subscribe() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [email,setemail] = useState("");
+  const [message,setmessage] = useState("");
 
   async function handleSubscribe(e) {
     e.preventDefault();
+    setmessage(" sending ");
 
     try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch("http://localhost:3000/subscribe",{
+        method : "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ email })
-      });
-
-      const data = await response.json();
-
-      setMessage(data.message);
-
-      if (response.ok) {
-        setEmail("");
       }
-    } catch {
-      setMessage("Subscription failed. Please try again.");
+    );
+    const data = await response.json();
+    if(!response.ok){
+      throw new Error(data.message);
     }
+    setmessage(data.message);
+    setemail("");
+    } catch (error) {
+      setmessage(error.message || "something went wrong");
+    }
+
+  
   }
+  return(
+    <section className="subscribe-section">
 
-  return (
-    <div className="subscribe">
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Enter your email to receive our latest updates.</p>
+    <form onSubmit={handleSubscribe}>
+      <h2>SIGN UP FOR OUR DAILY INSIDER</h2>
+      <input type="email"
+      placeholder ="Enter your email"
+      value={email}
+      onChange={(e) => setemail(e.target.value)}
+      required />
+      <button type="submit">Subscribe</button>
+      <p>{message}</p>
 
-      <form onSubmit={handleSubscribe}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    </form>
+    </section>
 
-        <button type="submit">Subscribe</button>
-      </form>
 
-      {message && <p>{message}</p>}
-    </div>
   );
-}
 
+
+}
 export default Subscribe;

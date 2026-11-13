@@ -87,8 +87,6 @@ function Post() {
           What do you want to ask or share
         </h3>
         <p className="post-information">
-          This section is designed based on the type of the post.
-          It could be developed by conditional rendering.
           <span>
             {" "}
             For post {postType.toLowerCase()}, the following
